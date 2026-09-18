@@ -1,0 +1,31 @@
+div {
+    width: 280px;
+    min-height: 150px;
+    padding: 20px;
+    border: 1px solid gray;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px gray;
+}
+footer {
+    text-align: center;
+    font-size: 0.8rem;
+    color: gray;
+    padding: 50px;
+}
+h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #333;
+}
+article {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 1000px;
+    padding: 20px;
+    margin: auto;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
