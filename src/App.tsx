@@ -1,17 +1,23 @@
 
+import { useState } from 'react';
 import './App.css'
 import { HAJOLISTA, type HajoTipus } from "./adat";
 import Hajok from './component/Hajok'
 
 function App() {
-  const [lista:HajoTipus[],listaFuggveny ]=HAJOLISTA
+  const [lista,setLista ]=useState<HajoTipus[]>(HAJOLISTA) /* állapotkezelés */
  
   function kivalasztKezelo(index:number){
     console.log(index)
     /* megváltoztatjuk az indexedik. hajó szinét */
     lista[index].szin="Hupilila"
     /* állapotkezelés kell  */
-
+    //1. Új változó abba bemásoljuk a lista tartalmát
+    const ujLista:HajoTipus[]=[...lista] // így egy teljesen új lista jön létre, egy új memóriaterületen.
+    //2. az új válzózó értéket változtatjuk meg
+    ujLista[index].szin="Hupilila"
+    //3. A megváltoztatott új változót értékét beállító függvénnyel visszamásoljuk
+    setLista(ujLista)
   }
 
   return (

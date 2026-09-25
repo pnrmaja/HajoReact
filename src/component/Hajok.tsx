@@ -3,7 +3,7 @@ import Hajo from "./Hajo";
 import {  type HajoTipus } from '../adat';
 interface HajoListaProps {
   lista: HajoTipus[],
-  kivalasztKezelo:()=>void
+  kivalasztKezelo:(index:number)=>void
 
 }
 export default function Hajok({lista,kivalasztKezelo}:HajoListaProps){

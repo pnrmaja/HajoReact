@@ -1,4 +1,4 @@
-export type HajoSzin = 'fekete' | 'fehér' | 'piros' | 'kék' | 'zöld'
+export type HajoSzin = 'fekete' | 'fehér' | 'piros' | 'kék' | 'zöld' | 'Hupilila' 
 
 export interface HajoTipus {
     readonly id: number

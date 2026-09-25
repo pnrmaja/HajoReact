@@ -3,7 +3,7 @@ import {  type HajoTipus } from '../adat';
 interface HajoProps {
   hajom: HajoTipus,
   index:number,
-  kivalasztKezelo:()=>void
+  kivalasztKezelo:(index:number)=>void
 }
 /* props - a szülőkompőonens a gyerekelemnek props-on keresztül adja át aparamétert */
 
