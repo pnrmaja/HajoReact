@@ -1,22 +1,30 @@
 
-import { HAJOLISTA } from './adat'
-import './App.css' 
+import './App.css'
+import { HAJOLISTA, type HajoTipus } from "./adat";
 import Hajok from './component/Hajok'
 
 function App() {
+  const [lista:HajoTipus[],listaFuggveny ]=HAJOLISTA
+ 
+  function kivalasztKezelo(index:number){
+    console.log(index)
+    /* megváltoztatjuk az indexedik. hajó szinét */
+    lista[index].szin="Hupilila"
+    /* állapotkezelés kell  */
+
+  }
 
   return (
-    <>
+    <>{/* React fragment */}
       <header>
-        <h1>Hurrá react</h1>
+        <h1>Hurrá React</h1>
       </header>
+
       <article>
-        <p>{/* ide kerül a hajó*/}</p>
-        <Hajok lista={HAJOLISTA} />
+        {/* ide kerül a hajó */}
+        <Hajok lista={lista} kivalasztKezelo={kivalasztKezelo} />{/* függvény referencia */}
       </article>
-      <footer>
-        <p>Ponauer Maja</p>
-      </footer>
+      <footer> <p>Saját név</p></footer>
     </>
   )
 }

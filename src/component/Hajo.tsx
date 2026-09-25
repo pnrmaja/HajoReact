@@ -1,18 +1,26 @@
-import { type HajoTipus} from '../adat';
 import './Hajo.css'
+import {  type HajoTipus } from '../adat';
 interface HajoProps {
-    hajom: HajoTipus
+  hajom: HajoTipus,
+  index:number,
+  kivalasztKezelo:()=>void
 }
-/* props- a szülőkomponens a gyerekelemnek propson keresztül adja át a paramétert */
- export default function Hajo({ hajom }: HajoProps) {
-    
-    return (
-        <div className="hajo">
-            <h2>{hajom.nev}</h2>
-            <p><span>Kapitány neve: </span>{hajom.kapitany}</p>
-            <p><span>Hajó színe: </span>{hajom.szin}</p>
-            <button>Kiválaszt</button>
-        </div>
+/* props - a szülőkompőonens a gyerekelemnek props-on keresztül adja át aparamétert */
+
+export default function Hajo({hajom,index,kivalasztKezelo}:HajoProps) {
  
-    );
+
+    return (
+        <>{/* React fragment */}
+            <div className="hajo">
+                <h2>{hajom.nev}</h2>
+                <p>{index+1}. hajó</p>
+                <p><span>Kapitány neve:</span>{hajom.kapitany}</p>
+                <p><span>Hajó színe:</span>{hajom.szin}</p>
+                <button onClick={()=>{kivalasztKezelo(index)}}>Kiválaszt</button>
+            </div>
+        </>
+    )
 }
+
+
